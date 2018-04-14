@@ -24,7 +24,11 @@
   <link id="bsdp-css" href="https://uxsolutions.github.io/bootstrap-datepicker/bootstrap-datepicker/css/bootstrap-datepicker3.min.css" rel="stylesheet">
   <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
 
-
+  <style type="text/css">
+    .button-col{
+      padding-top: 33px;
+    }
+  </style>
 </head>
 <body>
 
@@ -34,5 +38,5 @@
     <a class="p-2 text-dark" href="#">Features</a>
     <a class="p-2 text-dark" href="#">About</a>
   </nav>
-  <a class="btn btn-outline-primary" href="#">Add New</a>
+  <a class="btn btn-outline-primary" href="new.php">Add New</a>
 </div>

@@ -1,6 +1,7 @@
 var app = new Vue({
 	el:'#app',
 	data:{
+		id:'',
 		role:'',
 		sponser:'',
 		cross_border_deal:'',
@@ -45,16 +46,17 @@ var app = new Vue({
 
 	},
 	methods:{
-		addAggentContact:function() {
+		addAggentContact:function(dataObj) {
 			var self = this;
+	
 			agent_contact = {};
 			totalCount = self.agent_contacts.length+1;
 
-			agent_contact['name']		={'id':self.agent_contact_template['nameId']+totalCount , 'value':''};
-			agent_contact['title'] 		= {'id':self.agent_contact_template['titleId']+totalCount , 'value':''};
-			agent_contact['phone']		= {'id':self.agent_contact_template['phoneId']+totalCount , 'value':''};
-			agent_contact['email']		= {'id':self.agent_contact_template['emailId']+totalCount , 'value':''};
-			agent_contact['address'] 	= {'id':self.agent_contact_template['addressId']+totalCount , 'value':''};
+			agent_contact['name']		= {'id':self.agent_contact_template['nameId']+totalCount , 	'value':dataObj ? dataObj['name'] : ''};
+			agent_contact['title'] 		= {'id':self.agent_contact_template['titleId']+totalCount , 'value':dataObj ? dataObj['title'] : ''};
+			agent_contact['phone']		= {'id':self.agent_contact_template['phoneId']+totalCount , 'value':dataObj ? dataObj['phone'] : ''};
+			agent_contact['email']		= {'id':self.agent_contact_template['emailId']+totalCount , 'value':dataObj ? dataObj['email'] : ''};
+			agent_contact['address'] 	= {'id':self.agent_contact_template['addressId']+totalCount ,'value':dataObj ? dataObj['address'] : ''};
 			self.agent_contacts.push(agent_contact);
 			// console.log(self.agent_contacts);
 		},
@@ -62,15 +64,15 @@ var app = new Vue({
 			var	self = this;
 			self.agent_contacts.splice(index,1);
 		},
-		addBorrowerContact:function() {
+		addBorrowerContact:function(dataObj) {
 			var self = this;
 			borrower_contact = {};
 			totalCount = self.borrower_contacts.length+1;
-			borrower_contact['name']		={'id':self.borrower_contact_template['nameId']+totalCount , 'value':''};
-			borrower_contact['title'] 		= {'id':self.borrower_contact_template['titleId']+totalCount , 'value':''};
-			borrower_contact['phone']		= {'id':self.borrower_contact_template['phoneId']+totalCount , 'value':''};
-			borrower_contact['email']		= {'id':self.borrower_contact_template['emailId']+totalCount , 'value':''};
-			borrower_contact['address'] 	= {'id':self.borrower_contact_template['addressId']+totalCount , 'value':''};
+			borrower_contact['name']		={'id':self.borrower_contact_template['nameId']+totalCount , 'value':dataObj ? dataObj['name'] : ''};
+			borrower_contact['title'] 		= {'id':self.borrower_contact_template['titleId']+totalCount , 'value':dataObj ? dataObj['title'] : ''};
+			borrower_contact['phone']		= {'id':self.borrower_contact_template['phoneId']+totalCount , 'value':dataObj ? dataObj['phone'] : ''};
+			borrower_contact['email']		= {'id':self.borrower_contact_template['emailId']+totalCount , 'value':dataObj ? dataObj['email'] : ''};
+			borrower_contact['address'] 	= {'id':self.borrower_contact_template['addressId']+totalCount , 'value':dataObj ? dataObj['address'] : ''};
 			self.borrower_contacts.push(borrower_contact);
 			// console.log(self.borrower_contacts);
 		},
@@ -78,16 +80,16 @@ var app = new Vue({
 			var	self = this;
 			self.borrower_contacts.splice(index,1);
 		},
-		addLookupContact:function() {
+		addLookupContact:function(dataObj) {
 			var self = this;
 			lookup_contact = [];
 			totalCount = self.lookup_contacts.length+1;
 
-			lookup_contact['name']		={'id':self.lookup_contact_template['nameId']+totalCount , 'value':''};
-			lookup_contact['title'] 	= {'id':self.lookup_contact_template['titleId']+totalCount , 'value':''};
-			lookup_contact['phone']		= {'id':self.lookup_contact_template['phoneId']+totalCount , 'value':''};
-			lookup_contact['email']		= {'id':self.lookup_contact_template['emailId']+totalCount , 'value':''};
-			lookup_contact['address'] 	= {'id':self.lookup_contact_template['addressId']+totalCount , 'value':''};
+			lookup_contact['name']		={'id':self.lookup_contact_template['nameId']+totalCount , 'value':dataObj ? dataObj['name'] : ''};
+			lookup_contact['title'] 	= {'id':self.lookup_contact_template['titleId']+totalCount , 'value':dataObj ? dataObj['title'] : ''};
+			lookup_contact['phone']		= {'id':self.lookup_contact_template['phoneId']+totalCount , 'value':dataObj ? dataObj['phone'] : ''};
+			lookup_contact['email']		= {'id':self.lookup_contact_template['emailId']+totalCount , 'value':dataObj ? dataObj['email'] : ''};
+			lookup_contact['address'] 	= {'id':self.lookup_contact_template['addressId']+totalCount , 'value':dataObj ? dataObj['address'] : ''};
 			self.lookup_contacts.push(lookup_contact);
 			// console.log(self.lookup_contacts);
 		},
@@ -95,15 +97,15 @@ var app = new Vue({
 			var	self = this;
 			self.lookup_contacts.splice(index,1);
 		},
-		addClientusContact:function() {
+		addClientusContact:function(dataObj) {
 			var self = this;
 			clientus_contact = {};
 			totalCount = self.clientus_contacts.length+1;
-			clientus_contact['name']		={'id':self.clientus_contact_template['nameId']+totalCount , 'value':''};
-			clientus_contact['title'] 		= {'id':self.clientus_contact_template['titleId']+totalCount , 'value':''};
-			clientus_contact['phone']		= {'id':self.clientus_contact_template['phoneId']+totalCount , 'value':''};
-			clientus_contact['email']		= {'id':self.clientus_contact_template['emailId']+totalCount , 'value':''};
-			clientus_contact['address'] 	= {'id':self.clientus_contact_template['addressId']+totalCount , 'value':''};
+			clientus_contact['name']		={'id':self.clientus_contact_template['nameId']+totalCount , 'value':dataObj ? dataObj['name'] : ''};
+			clientus_contact['title'] 		= {'id':self.clientus_contact_template['titleId']+totalCount , 'value':dataObj ? dataObj['title'] : ''};
+			clientus_contact['phone']		= {'id':self.clientus_contact_template['phoneId']+totalCount , 'value':dataObj ? dataObj['phone'] : ''};
+			clientus_contact['email']		= {'id':self.clientus_contact_template['emailId']+totalCount , 'value':dataObj ? dataObj['email'] : ''};
+			clientus_contact['address'] 	= {'id':self.clientus_contact_template['addressId']+totalCount , 'value':dataObj ? dataObj['address'] : ''};
 			self.clientus_contacts.push(clientus_contact);
 			// console.log(self.lookup_contacts);
 		},
@@ -111,15 +113,15 @@ var app = new Vue({
 			var	self = this;
 			self.clientus_contacts.splice(index,1);
 		},
-		addClientforeignContact:function() {
+		addClientforeignContact:function(dataObj) {
 			var self = this;
 			clientforeign_contact = {};
 			totalCount = self.clientforeign_contacts.length+1;
-			clientforeign_contact['name']		={'id':self.clientforeign_contact_template['nameId']+totalCount , 'value':''};
-			clientforeign_contact['title'] 		= {'id':self.clientforeign_contact_template['titleId']+totalCount , 'value':''};
-			clientforeign_contact['phone']		= {'id':self.clientforeign_contact_template['phoneId']+totalCount , 'value':''};
-			clientforeign_contact['email']		= {'id':self.clientforeign_contact_template['emailId']+totalCount , 'value':''};
-			clientforeign_contact['address'] 	= {'id':self.clientforeign_contact_template['addressId']+totalCount , 'value':''};
+			clientforeign_contact['name']		={'id':self.clientforeign_contact_template['nameId']+totalCount , 'value':dataObj ? dataObj['name'] : ''};
+			clientforeign_contact['title'] 		= {'id':self.clientforeign_contact_template['titleId']+totalCount , 'value':dataObj ? dataObj['title'] : ''};
+			clientforeign_contact['phone']		= {'id':self.clientforeign_contact_template['phoneId']+totalCount , 'value':dataObj ? dataObj['phone'] : ''};
+			clientforeign_contact['email']		= {'id':self.clientforeign_contact_template['emailId']+totalCount , 'value':dataObj ? dataObj['email'] : ''};
+			clientforeign_contact['address'] 	= {'id':self.clientforeign_contact_template['addressId']+totalCount , 'value':dataObj ? dataObj['address'] : ''};
 			self.clientforeign_contacts.push(clientforeign_contact);
 			// console.log(self.lookup_contacts);
 		},
@@ -127,15 +129,15 @@ var app = new Vue({
 			var	self = this;
 			self.clientforeign_contacts.splice(index,1);
 		},
-		addOpposingusContact:function() {
+		addOpposingusContact:function(dataObj) {
 			var self = this;
 			opposingus_contact = {};
 			totalCount = self.opposingus_contacts.length+1;
-			opposingus_contact['name']		={'id':self.opposingus_contact_template['nameId']+totalCount , 'value':''};
-			opposingus_contact['title'] 		= {'id':self.opposingus_contact_template['titleId']+totalCount , 'value':''};
-			opposingus_contact['phone']		= {'id':self.opposingus_contact_template['phoneId']+totalCount , 'value':''};
-			opposingus_contact['email']		= {'id':self.opposingus_contact_template['emailId']+totalCount , 'value':''};
-			opposingus_contact['address'] 	= {'id':self.opposingus_contact_template['addressId']+totalCount , 'value':''};
+			opposingus_contact['name']		={'id':self.opposingus_contact_template['nameId']+totalCount , 'value':dataObj ? dataObj['name'] : ''};
+			opposingus_contact['title'] 		= {'id':self.opposingus_contact_template['titleId']+totalCount , 'value':dataObj ? dataObj['title'] : ''};
+			opposingus_contact['phone']		= {'id':self.opposingus_contact_template['phoneId']+totalCount , 'value':dataObj ? dataObj['phone'] : ''};
+			opposingus_contact['email']		= {'id':self.opposingus_contact_template['emailId']+totalCount , 'value':dataObj ? dataObj['email'] : ''};
+			opposingus_contact['address'] 	= {'id':self.opposingus_contact_template['addressId']+totalCount , 'value':dataObj ? dataObj['address'] : ''};
 			self.opposingus_contacts.push(opposingus_contact);
 			// console.log(self.lookup_contacts);
 		},
@@ -143,15 +145,15 @@ var app = new Vue({
 			var	self = this;
 			self.opposingus_contacts.splice(index,1);
 		},
-		addOpposingforeignContact:function() {
+		addOpposingforeignContact:function(dataObj) {
 			var self = this;
 			opposingforeign_contact = {};
 			totalCount = self.opposingforeign_contacts.length+1;
-			opposingforeign_contact['name']		={'id':self.opposingforeign_contact_template['nameId']+totalCount , 'value':''};
-			opposingforeign_contact['title'] 		= {'id':self.opposingforeign_contact_template['titleId']+totalCount , 'value':''};
-			opposingforeign_contact['phone']		= {'id':self.opposingforeign_contact_template['phoneId']+totalCount , 'value':''};
-			opposingforeign_contact['email']		= {'id':self.opposingforeign_contact_template['emailId']+totalCount , 'value':''};
-			opposingforeign_contact['address'] 	= {'id':self.opposingforeign_contact_template['addressId']+totalCount , 'value':''};
+			opposingforeign_contact['name']		={'id':self.opposingforeign_contact_template['nameId']+totalCount , 'value':dataObj ? dataObj['name'] : ''};
+			opposingforeign_contact['title'] 		= {'id':self.opposingforeign_contact_template['titleId']+totalCount , 'value':dataObj ? dataObj['title'] : ''};
+			opposingforeign_contact['phone']		= {'id':self.opposingforeign_contact_template['phoneId']+totalCount , 'value':dataObj ? dataObj['phone'] : ''};
+			opposingforeign_contact['email']		= {'id':self.opposingforeign_contact_template['emailId']+totalCount , 'value':dataObj ? dataObj['email'] : ''};
+			opposingforeign_contact['address'] 	= {'id':self.opposingforeign_contact_template['addressId']+totalCount , 'value':dataObj ? dataObj['address'] : ''};
 			self.opposingforeign_contacts.push(opposingforeign_contact);
 			// console.log(self.lookup_contacts);
 		},
@@ -162,6 +164,7 @@ var app = new Vue({
 		submit:function () {
 			var self = this;
 			var data = {
+				'id' : self.id,
 				'clientname' : self.clientname, 
 				'client_number' : self.client_number, 
 				'pepper_finance' : self.pepper_finance, 
@@ -197,9 +200,8 @@ var app = new Vue({
 				'opposing_foriegn_firm_name' : self.opposing_foriegn_firm_name, 
 				'opposing_foriegn_data' : self.getOpposingForiegnData(),
 			};
-			console.log(data);
-			$.post("savedata.php", data, function(result){
-		       	response = JSON.parse(result);
+			$.post("update.php", data, function(result){
+		        response = JSON.parse(result);
 		       	if (response.status == 200) {
 		       		alert('success');
 		       		window.location = "index.php";
@@ -301,20 +303,87 @@ var app = new Vue({
 				data.push(temp);
 			});
 			return data;
+		},
+		getQueryString : function ( field, url ) {
+			var href = url ? url : window.location.href;
+			var reg = new RegExp( '[?&]' + field + '=([^&#]*)', 'i' );
+			var string = reg.exec(href);
+			return string ? string[1] : null;
 		}
 
 
 	},
 	mounted:function() {
 		var self =this;
-		self.addAggentContact();
-		self.addBorrowerContact();
-		self.addLookupContact();
-		self.addClientusContact();
-		self.addClientforeignContact();
-		self.addOpposingusContact();
-		self.addOpposingforeignContact();
+		self.id = self.getQueryString('id');
+		$.post("getdata.php",{'id':self.id}, function(result){
+			var data = JSON.parse(result);
+			console.log(data);
+			console.log(data.closing_date['date']);
+			var date = new Date(data.closing_date['date']);
+			// console.log(date);
+			$('#closing_date').datepicker("update", date );
+			self.clientname = data.client_name;
+			self.client_number = data.client_number;
+			self.pepper_finance = data.pepper_finance_team_members.split(',');
+			self.closing_date = data.closing_date['date'];
+			self.description = data.description;
+			self.role = data.role;
+			self.lender_side = data.lender_side;
+			self.sponser = data.is_sponser;
+			self.sponser_name=data.sponser_name;
+			self.cross_border_deal = data.is_cross_border_deal;
+			self.deal_country = data.country.split(',');
+			self.deal_industry = data.industry;
+			self.type_of_deal = data.type_of_deal.split(',');
+			self.collateral = data.collateral.split(',');
+			self.distribution = data.distribution;
+			self.name_agent = data.agent_name;
+			self.borrower_name = data.borrower_name;
+			self.borrower_is_public_company = data.is_public_company;
+			self.lookup_firm_name = data.lookup_firm_name;
+			self.client_us_state = data.client_us_state;
+			self.client_us_firm_name = data.client_us_firm_name;
+			self.client_foriegn_country = data.client_foreign_country;
+			self.client_foriegn_firm_name = data.client_foreign_firm_name;
+			self.opposing_us_state = data.opposing_us_state;
+			self.opposing_us_firm_name = data.opposing_us_firm_name;
+			self.opposing_foriegn_country = data.opposing_foreign_country;
+			self.opposing_foriegn_firm_name = data.opposing_foreign_firm_name;
+			data.agent_data.forEach(function (item) {
+				self.addAggentContact(item);
+			});
+			data.borrower_data.forEach(function (item) {
+				self.addBorrowerContact(item);
+			});
+			data.lookup_data.forEach(function (item) {
+				self.addLookupContact(item);
+			});
+			data.client_us_data.forEach(function (item) {
+				self.addClientusContact(item);
+			});
+			data.client_foreign_data.forEach(function (item) {
+				self.addClientforeignContact(item);
+			});
+			data.opposing_us_data.forEach(function (item) {
+				self.addOpposingusContact(item);
+			});
+			data.opposing_foreign_data.forEach(function (item) {
+				self.addOpposingforeignContact(item);
+			});
+
+		});
 	}
 
 
 });
+
+
+
+
+var getQueryString = function ( field, url ) {
+	var href = url ? url : window.location.href;
+	var reg = new RegExp( '[?&]' + field + '=([^&#]*)', 'i' );
+	var string = reg.exec(href);
+	return string ? string[1] : null;
+};

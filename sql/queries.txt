@@ -1,0 +1,95 @@
+CREATE TABLE client_master (
+  id int NOT NULL IDENTITY PRIMARY KEY,
+  client_name varchar(100) DEFAULT NULL,
+  client_number varchar(20) DEFAULT NULL,
+  pepper_finance_team_members varchar(200) DEFAULT NULL,
+  closing_date date DEFAULT NULL,
+  description varchar(200) DEFAULT NULL,
+  role varchar(20) DEFAULT NULL,
+  lender_side varchar(50) DEFAULT NULL,
+  is_sponser varchar(10) DEFAULT NULL,
+  sponser_name varchar(100) DEFAULT NULL,
+  is_cross_border_deal varchar(10) DEFAULT NULL,
+  country varchar(50) DEFAULT NULL,
+  industry varchar(50) DEFAULT NULL,
+  type_of_deal varchar(50) DEFAULT NULL,
+  collateral varchar(50) DEFAULT NULL,
+  distribution varchar(50) DEFAULT NULL,
+  agent_name varchar(100) DEFAULT NULL,
+  borrower_name varchar(100) DEFAULT NULL,
+  is_public_company varchar(10) DEFAULT NULL,
+  lookup_firm_name varchar(100) DEFAULT NULL,
+  client_us_state varchar(50) DEFAULT NULL,
+  client_us_firm_name varchar(100) DEFAULT NULL,
+  client_foreign_country varchar(50) DEFAULT NULL,
+  client_foreign_firm_name varchar(100) DEFAULT NULL,
+  opposing_us_state varchar(50) DEFAULT NULL,
+  opposing_us_firm_name varchar(100) DEFAULT NULL,
+  opposing_foreign_country varchar(50) DEFAULT NULL,
+  opposing_foreign_firm_name varchar(100) DEFAULT NULL
+)
+
+
+
+
+CREATE TABLE agent_master (
+  id int NOT NULL IDENTITY PRIMARY KEY,
+  client_id int DEFAULT NULL ,
+  name varchar(100) DEFAULT NULL,
+  title varchar(100) DEFAULT NULL,
+  email varchar(100) DEFAULT NULL,
+  phone varchar(100) DEFAULT NULL,
+  address varchar(100) DEFAULT NULL
+)
+
+
+CREATE TABLE borrower_master (
+  id int NOT NULL IDENTITY PRIMARY KEY,
+  client_id int DEFAULT NULL ,
+  name varchar(100) DEFAULT NULL,
+  title varchar(100) DEFAULT NULL,
+  email varchar(100) DEFAULT NULL,
+  phone varchar(100) DEFAULT NULL,
+  address varchar(100) DEFAULT NULL
+)
+
+
+CREATE TABLE lookup_master (
+  id int NOT NULL IDENTITY PRIMARY KEY,
+  client_id int DEFAULT NULL ,
+  name varchar(100) DEFAULT NULL,
+  email varchar(100) DEFAULT NULL,
+  phone varchar(100) DEFAULT NULL
+)
+
+CREATE TABLE client_us_master (
+  id int NOT NULL IDENTITY PRIMARY KEY,
+  client_id int DEFAULT NULL ,
+  name varchar(100) DEFAULT NULL,
+  email varchar(100) DEFAULT NULL,
+  phone varchar(100) DEFAULT NULL
+)
+
+CREATE TABLE client_foreign_master (
+  id int NOT NULL IDENTITY PRIMARY KEY,
+  client_id int DEFAULT NULL ,
+  name varchar(100) DEFAULT NULL,
+  email varchar(100) DEFAULT NULL,
+  phone varchar(100) DEFAULT NULL
+)
+
+  CREATE TABLE opposing_us_master (
+    id int NOT NULL IDENTITY PRIMARY KEY,
+    client_id int DEFAULT NULL ,
+    name varchar(100) DEFAULT NULL,
+    email varchar(100) DEFAULT NULL,
+    phone varchar(100) DEFAULT NULL
+  )
+
+CREATE TABLE opposing_foreign_master (
+  id int NOT NULL IDENTITY PRIMARY KEY,
+  client_id int DEFAULT NULL ,
+  name varchar(100) DEFAULT NULL,
+  email varchar(100) DEFAULT NULL,
+  phone varchar(100) DEFAULT NULL
+)

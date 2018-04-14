@@ -746,6 +746,7 @@
 <button type="submit" class="btn btn-primary btn-lg">Submit</button>
 <a href="index.php" class="btn btn-secondary btn-lg">Cancle</a>
 
+
 </form>
 
 
@@ -796,14 +797,13 @@
       <script src="../xcrud_app/dist/bootstrap4.min.js"></script>
       <script src="../xcrud_app/dist/jquery.bootgrid.min.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.16/vue.min.js"></script>
-      <script type="text/javascript" src="js/script.js"></script>
+      <script type="text/javascript" src="js/updatescript.js"></script>
       <script src="https://uxsolutions.github.io/bootstrap-datepicker/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
 
 
       <script>
 
-        $('#closing_date').datepicker({
-        });
+        
 
         /*Holder.addTheme('thumb', {
           bg: '#55595c',
