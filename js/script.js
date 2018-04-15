@@ -1,6 +1,7 @@
 var app = new Vue({
 	el:'#app',
 	data:{
+		client_matter :'',
 		role:'',
 		sponser:'',
 		cross_border_deal:'',
@@ -162,6 +163,7 @@ var app = new Vue({
 		submit:function () {
 			var self = this;
 			var data = {
+				'client_matter' : self.client_matter,
 				'clientname' : self.clientname, 
 				'client_number' : self.client_number, 
 				'pepper_finance' : self.pepper_finance, 

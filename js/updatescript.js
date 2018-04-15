@@ -1,6 +1,7 @@
 var app = new Vue({
 	el:'#app',
 	data:{
+		client_matter,
 		id:'',
 		role:'',
 		sponser:'',
@@ -164,6 +165,7 @@ var app = new Vue({
 		submit:function () {
 			var self = this;
 			var data = {
+				'client_matter' : self.client_matter,
 				'id' : self.id,
 				'clientname' : self.clientname, 
 				'client_number' : self.client_number, 
@@ -323,6 +325,7 @@ var app = new Vue({
 			var date = new Date(data.closing_date['date']);
 			// console.log(date);
 			$('#closing_date').datepicker("update", date );
+			self.client_matter = data.client_matter
 			self.clientname = data.client_name;
 			self.client_number = data.client_number;
 			self.pepper_finance = data.pepper_finance_team_members.split(',');

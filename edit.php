@@ -13,7 +13,12 @@
 
 
   <form v-on:submit.prevent="submit">
-
+<div class="row">
+    <div class="form-group">
+  <label for="client_matter col-sm-12">Client Matter</label>
+  <input type="name" class="form-control" id="client_matter" aria-describedby="emailHelp" placeholder="Enter Client Number" v-model="client_matter">
+</div>
+</div>
     <div class="row">
       <div class="col">
 
@@ -37,7 +42,7 @@
 
 <div class="form-group">
   <label for="pepper_finance">Pepper Finance Team Members</label>
-  <select multiple class="form-control" id="pepper_finance" v-model="pepper_finance">
+  <select class="form-control" id="pepper_finance" v-model="pepper_finance">
     <option value="team1">team1</option>
     <option value="team2">team2</option>
     <option value="team3">team3</option>

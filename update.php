@@ -25,9 +25,10 @@
 	// echo "<pre>";
 	// print_r($_POST);
 
-	$sql = "INSERT INTO client_master (client_name,  client_number, pepper_finance_team_members,  closing_date,  description,  role, lender_side,  is_sponser,  sponser_name,  is_cross_border_deal,  country,  industry,  type_of_deal, collateral,  distribution,  agent_name, borrower_name,  is_public_company,  lookup_firm_name,  client_us_state,  client_us_firm_name,  client_foreign_country,  client_foreign_firm_name,  opposing_us_state,  opposing_us_firm_name,  opposing_foreign_country,  opposing_foreign_firm_name) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+	$sql = "INSERT INTO client_master (client_matter, client_name,  client_number, pepper_finance_team_members,  closing_date,  description,  role, lender_side,  is_sponser,  sponser_name,  is_cross_border_deal,  country,  industry,  type_of_deal, collateral,  distribution,  agent_name, borrower_name,  is_public_company,  lookup_firm_name,  client_us_state,  client_us_firm_name,  client_foreign_country,  client_foreign_firm_name,  opposing_us_state,  opposing_us_firm_name,  opposing_foreign_country,  opposing_foreign_firm_name) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
 	$param_array = [];
 	// array_push($param_array,$_POST['id']);
+	array_push($param_array,(isset($_POST['client_matter']) && $_POST['client_matter']!='' ?$_POST['client_matter']:''));
 	array_push($param_array,(isset($_POST['clientname']) && $_POST['clientname']!='' ?$_POST['clientname']:''));
 	array_push($param_array,(isset($_POST['client_number']) && $_POST['client_number']!=''?$_POST['client_number']:''));
 	array_push($param_array,(isset($_POST['pepper_finance']) && $_POST['pepper_finance']!=''?join(',',$_POST['pepper_finance']):''));

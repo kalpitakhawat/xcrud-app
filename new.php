@@ -13,14 +13,18 @@
 
 
   <form v-on:submit.prevent="submit">
-
-    <div class="row">
-      <div class="col">
-
-       <div class="form-group">
-        <label for="clientname">Client/Matter</label>
-        <input type="name" class="form-control" id="clientname" aria-describedby="emailHelp" placeholder="Enter Client Name" v-model="clientname">
-        <small id="emailHelp" class="form-text text-muted"></small>
+<div class="row">
+    <div class="form-group col-sm-12">
+  <label for="client_matter">Client Matter</label>
+  <input type="name" class="form-control" id="client_matter" aria-describedby="emailHelp" placeholder="Enter Client Matter" v-model="client_matter">
+</div>
+</div>
+<div class="row">
+    <div class="col">
+    <div class="form-group">
+    <label for="clientname">Client/Matter</label>
+    <input type="name" class="form-control" id="clientname" aria-describedby="emailHelp" placeholder="Enter Client Name" v-model="clientname">
+    <small id="emailHelp" class="form-text text-muted"></small>
     </div>
 </div>
 <div class="col">
@@ -37,7 +41,7 @@
 
 <div class="form-group">
   <label for="pepper_finance">Pepper Finance Team Members</label>
-  <select multiple class="form-control" id="pepper_finance" v-model="pepper_finance">
+  <select class="form-control" id="pepper_finance" v-model="pepper_finance">
     <option value="team1">team1</option>
     <option value="team2">team2</option>
     <option value="team3">team3</option>

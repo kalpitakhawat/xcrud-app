@@ -1,5 +1,6 @@
 CREATE TABLE client_master (
   id int NOT NULL IDENTITY PRIMARY KEY,
+  client_matter varchar(100) DEFAULT NULL,
   client_name varchar(100) DEFAULT NULL,
   client_number varchar(20) DEFAULT NULL,
   pepper_finance_team_members varchar(200) DEFAULT NULL,
