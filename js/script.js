@@ -34,13 +34,18 @@ var app = new Vue({
 		name_agent : '',
 		borrower_name : '',
 		borrower_is_public_company : '',
+		lookup : '',
 		lookup_firm_name : '',
+		client_us:'',
 		client_us_state : '',
 		client_us_firm_name : '',
+		client_foriegn:'',
 		client_foriegn_country : '',
 		client_foriegn_firm_name : '',
+		opposing_us:'',
 		opposing_us_state : '',
 		opposing_us_firm_name : '',
+		opposing_foriegn:'',
 		opposing_foriegn_country : '',
 		opposing_foriegn_firm_name : '',
 
@@ -49,6 +54,12 @@ var app = new Vue({
 		addAggentContact:function() {
 			var self = this;
 			agent_contact = {};
+			if(self.agent_contacts.length != 0 ){
+				if (self.agent_contacts[self.agent_contacts.length-1]['name']['value'] =='' ||self.agent_contacts[self.agent_contacts.length-1]['title']['value']==''||self.agent_contacts[self.agent_contacts.length-1]['phone']['value']==''||self.agent_contacts[self.agent_contacts.length-1]['email']['value']==''||self.agent_contacts[self.agent_contacts.length-1]['address']['value']=='') {
+					alert('Please Fill all Fileds of Last Element');
+					return true;
+				}
+			}
 			totalCount = self.agent_contacts.length+1;
 
 			agent_contact['name']		={'id':self.agent_contact_template['nameId']+totalCount , 'value':''};
@@ -66,6 +77,12 @@ var app = new Vue({
 		addBorrowerContact:function() {
 			var self = this;
 			borrower_contact = {};
+			if(self.borrower_contacts.length != 0 ){
+				if (self.borrower_contacts[self.borrower_contacts.length-1]['name']['value'] =='' ||self.borrower_contacts[self.borrower_contacts.length-1]['title']['value']==''||self.borrower_contacts[self.borrower_contacts.length-1]['phone']['value']==''||self.borrower_contacts[self.borrower_contacts.length-1]['email']['value']==''||self.borrower_contacts[self.borrower_contacts.length-1]['address']['value']=='') {
+					alert('Please Fill all Fileds of Last Row');
+					return true;
+				}
+			}
 			totalCount = self.borrower_contacts.length+1;
 			borrower_contact['name']		={'id':self.borrower_contact_template['nameId']+totalCount , 'value':''};
 			borrower_contact['title'] 		= {'id':self.borrower_contact_template['titleId']+totalCount , 'value':''};
@@ -81,7 +98,13 @@ var app = new Vue({
 		},
 		addLookupContact:function() {
 			var self = this;
-			lookup_contact = [];
+			lookup_contact = {};
+			if(self.lookup_contacts.length != 0 ){
+				if (self.lookup_contacts[self.lookup_contacts.length-1]['name']['value'] =='' ||self.lookup_contacts[self.lookup_contacts.length-1]['phone']['value']==''||self.lookup_contacts[self.lookup_contacts.length-1]['email']['value']=='') {
+					alert('Please Fill all Fileds of Last Row');
+					return true;
+				}
+			}
 			totalCount = self.lookup_contacts.length+1;
 
 			lookup_contact['name']		={'id':self.lookup_contact_template['nameId']+totalCount , 'value':''};
@@ -99,6 +122,12 @@ var app = new Vue({
 		addClientusContact:function() {
 			var self = this;
 			clientus_contact = {};
+			if(self.clientus_contacts.length != 0 ){
+				if (self.clientus_contacts[self.clientus_contacts.length-1]['name']['value'] =='' ||self.clientus_contacts[self.clientus_contacts.length-1]['phone']['value']==''||self.clientus_contacts[self.clientus_contacts.length-1]['email']['value']=='') {
+					alert('Please Fill all Fileds of Last Row');
+					return true;
+				}
+			}
 			totalCount = self.clientus_contacts.length+1;
 			clientus_contact['name']		={'id':self.clientus_contact_template['nameId']+totalCount , 'value':''};
 			clientus_contact['title'] 		= {'id':self.clientus_contact_template['titleId']+totalCount , 'value':''};
@@ -115,6 +144,12 @@ var app = new Vue({
 		addClientforeignContact:function() {
 			var self = this;
 			clientforeign_contact = {};
+			if(self.clientforeign_contacts.length != 0 ){
+				if (self.clientforeign_contacts[self.clientforeign_contacts.length-1]['name']['value'] =='' ||self.clientforeign_contacts[self.clientforeign_contacts.length-1]['phone']['value']==''||self.clientforeign_contacts[self.clientforeign_contacts.length-1]['email']['value']=='') {
+					alert('Please Fill all Fileds of Last Row');
+					return true;
+				}
+			}
 			totalCount = self.clientforeign_contacts.length+1;
 			clientforeign_contact['name']		={'id':self.clientforeign_contact_template['nameId']+totalCount , 'value':''};
 			clientforeign_contact['title'] 		= {'id':self.clientforeign_contact_template['titleId']+totalCount , 'value':''};
@@ -131,6 +166,12 @@ var app = new Vue({
 		addOpposingusContact:function() {
 			var self = this;
 			opposingus_contact = {};
+			if(self.opposingus_contacts.length != 0 ){
+				if (self.opposingus_contacts[self.opposingus_contacts.length-1]['name']['value'] =='' ||self.opposingus_contacts[self.opposingus_contacts.length-1]['phone']['value']==''||self.opposingus_contacts[self.opposingus_contacts.length-1]['email']['value']=='') {
+					alert('Please Fill all Fileds of Last Row');
+					return true;
+				}
+			}
 			totalCount = self.opposingus_contacts.length+1;
 			opposingus_contact['name']		={'id':self.opposingus_contact_template['nameId']+totalCount , 'value':''};
 			opposingus_contact['title'] 		= {'id':self.opposingus_contact_template['titleId']+totalCount , 'value':''};
@@ -147,6 +188,12 @@ var app = new Vue({
 		addOpposingforeignContact:function() {
 			var self = this;
 			opposingforeign_contact = {};
+			if(self.opposingforeign_contacts.length != 0 ){
+				if (self.opposingforeign_contacts[self.opposingforeign_contacts.length-1]['name']['value'] =='' ||self.opposingforeign_contacts[self.opposingforeign_contacts.length-1]['phone']['value']==''||self.opposingforeign_contacts[self.opposingforeign_contacts.length-1]['email']['value']=='') {
+					alert('Please Fill all Fileds of Last Row');
+					return true;
+				}
+			}
 			totalCount = self.opposingforeign_contacts.length+1;
 			opposingforeign_contact['name']		={'id':self.opposingforeign_contact_template['nameId']+totalCount , 'value':''};
 			opposingforeign_contact['title'] 		= {'id':self.opposingforeign_contact_template['titleId']+totalCount , 'value':''};
@@ -162,7 +209,8 @@ var app = new Vue({
 		},
 		submit:function () {
 			var self = this;
-			var data = {
+			if ($('#addform').valid()) {
+				var data = {
 				'client_matter' : self.client_matter,
 				'clientname' : self.clientname, 
 				'client_number' : self.client_number, 
@@ -184,17 +232,22 @@ var app = new Vue({
 				'borrower_name' : self.borrower_name, 
 				'borrower_is_public_company' : self.borrower_is_public_company, 
 				'borrower_data' : self.getBorrowerData(),
+				'lookup': self.lookup,
 				'lookup_firm_name' : self.lookup_firm_name,
 				'lookup_data' :self.getLookupData(), 
+				'client_us' : self.client_us,
 				'client_us_state' : self.client_us_state, 
 				'client_us_firm_name' : self.client_us_firm_name, 
 				'client_us_data' : self.getClientUsData(),
+				'client_foriegn' : self.client_foriegn,
 				'client_foriegn_country' : self.client_foriegn_country, 
 				'client_foriegn_firm_name' : self.client_foriegn_firm_name, 
 				'client_foriegn_data' :self.getClientForiegnData(),
+				'opposing_us' : self.opposing_us,
 				'opposing_us_state' : self.opposing_us_state, 
 				'opposing_us_firm_name' : self.opposing_us_firm_name, 
 				'opposing_us_data' : self.getOpposingUsData(),
+				'opposing_foriegn' : self.opposing_foriegn,
 				'opposing_foriegn_country' : self.opposing_foriegn_country, 
 				'opposing_foriegn_firm_name' : self.opposing_foriegn_firm_name, 
 				'opposing_foriegn_data' : self.getOpposingForiegnData(),
@@ -210,6 +263,7 @@ var app = new Vue({
 		       		alert('error');
 		       	}
 		    });
+			}
 		},
 		getAggentData:function () {
 			var self = this;
@@ -316,6 +370,8 @@ var app = new Vue({
 		self.addClientforeignContact();
 		self.addOpposingusContact();
 		self.addOpposingforeignContact();
+		$('#preloader').hide();
+
 	}
 
 

@@ -1,11 +1,11 @@
 <?php
 Class dbObj{
-	function getConnstring() {
-		$serverName = "DESKTOP-I5P7Q8B\SQLINSTANCE"; //serverName\instanceName
+	 function getConnstring() {
+		$serverName = "PHAPPDEV03"; //serverName\instanceName
 
 		// Since UID and PWD are not specified in the $connectionInfo array,
 		// The connection will be attempted using Windows Authentication.
-		$connectionInfo = array( "Database"=>"xcrud");
+		$connectionInfo = array( "Database"=>"Commercial_Finance","UID"=>"portaluser","PWD"=>"P0rtal#us3rr");
 		$conn = sqlsrv_connect( $serverName, $connectionInfo);
 
 		if( $conn ) {
